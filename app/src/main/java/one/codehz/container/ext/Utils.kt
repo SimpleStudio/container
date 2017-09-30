@@ -43,13 +43,13 @@ fun getUriFromFile(file: File) = FileProvider.getUriForFile(virtualCore.context,
 fun Cursor.asSequence() = buildSequence { while (moveToNext()) yield(this@asSequence) }
 
 @Suppress("UNCHECKED_CAST")
-operator fun <T> View.get(id: Int) = this.findViewById(id) as T
+operator fun <T> View.get(id: Int) = this.findViewById<View>(id) as T
 
 @Suppress("UNCHECKED_CAST")
-operator fun <T> Dialog.get(id: Int) = this.findViewById(id) as T
+operator fun <T> Dialog.get(id: Int) = this.findViewById<View>(id) as T
 
 @Suppress("UNCHECKED_CAST")
-operator fun <T> Activity.get(id: Int) = this.findViewById(id) as T
+operator fun <T> Activity.get(id: Int) = this.findViewById<View>(id) as T
 
 infix fun View.pair(name: String) = android.util.Pair(this, name)
 

@@ -106,7 +106,7 @@ class UserManagerActivity : BaseActivity(R.layout.user_manager_activity) {
                     .setTitle(getString(R.string.input_name))
                     .setView(R.layout.input_layout)
                     .setPositiveButton(android.R.string.ok) { dialog, _ ->
-                        vUserManager.createUser(((dialog as AlertDialog).findViewById(R.id.input) as EditText).text.toString(), 0)
+                        vUserManager.createUser(((dialog as AlertDialog).findViewById<EditText>(R.id.input)).text.toString(), 0)
                         supportLoaderManager.restartLoader(USER_LIST, null, userListLoader)
                     }
                     .setNegativeButton(android.R.string.cancel) { _, _ -> }
